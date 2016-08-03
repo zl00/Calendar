@@ -8,26 +8,6 @@
 
 import UIKit
 
-class CustomViewFlowLayout : UICollectionViewFlowLayout {
-    
-    let cellSpacing:CGFloat = 0
-    
-    override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        if let attributes = super.layoutAttributesForElementsInRect(rect) {
-            for (index, attribute) in attributes.enumerate() {
-                if index == 0 { continue }
-                let prevLayoutAttributes = attributes[index - 1]
-                let origin = CGRectGetMaxX(prevLayoutAttributes.frame)
-                if(origin + cellSpacing + attribute.frame.size.width < self.collectionViewContentSize().width) {
-                    attribute.frame.origin.x = origin + cellSpacing
-                }
-            }
-            return attributes
-        }
-        return nil
-    }
-}
-
 class B3FCalendarVC: UIViewController {
     
     @IBOutlet weak var calendarCV: UICollectionView!
@@ -63,7 +43,6 @@ class B3FCalendarVC: UIViewController {
         super.viewDidLoad()
         
         prepareData(NSDate())
-        self.calendarCV.collectionViewLayout = CustomViewFlowLayout()
         self.calendarCV.delegate = self
         self.calendarCV.dataSource = self
     }
@@ -71,10 +50,7 @@ class B3FCalendarVC: UIViewController {
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator)
     {
         super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
-        coordinator.animateAlongsideTransition({ (context) -> Void in
-            }, completion: { (context) -> Void in
-            self.calendarCV.collectionViewLayout.invalidateLayout()
-        })
+        self.calendarCV.reloadData()
     }
 }
 

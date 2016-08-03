@@ -29,11 +29,6 @@ class B3FDateCell: UICollectionViewCell {
         setupUI()
     }
     
-    func setupUI() -> Void {
-        self.layer.borderWidth = 1.0
-        self.layer.borderColor = UIColor(red: 158.0/255, green: 158.0/255, blue: 158.0/255, alpha: 0.6).CGColor
-    }
-    
     func updateData(dateType: B3FDateType) -> Void {
         self.dateType = dateType
         switch dateType {
@@ -48,13 +43,17 @@ class B3FDateCell: UICollectionViewCell {
         }
     }
     
+    private func setupUI() -> Void {
+        self.layer.borderWidth = 1.0
+        self.layer.borderColor = UIColor(red: 158.0/255, green: 158.0/255, blue: 158.0/255, alpha: 0.6).CGColor
+    }
     
-    func updateIsToday(isToday: Bool) -> Void {
+    private func updateIsToday(isToday: Bool) -> Void {
         self.todayLbl.hidden = !isToday
         self.dateLbl.font = isToday ? UIFont(name: "Helvetica-Bold", size: 35) : UIFont(name: "Helvetica", size: 35)
     }
     
-    func updateDate(date: NSDate?) -> Void {
+    private func updateDate(date: NSDate?) -> Void {
         if let d = date {
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "d"
@@ -65,8 +64,4 @@ class B3FDateCell: UICollectionViewCell {
         }
     }
     
-    func updateDateType(dateType: B3FDateType) -> Void {
-        self.dateType = dateType
-        // TODO:
-    }
 }
