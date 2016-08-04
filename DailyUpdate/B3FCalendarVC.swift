@@ -17,7 +17,6 @@ class B3FCalendarVC: UIViewController {
     
     func prepareData(date: NSDate) -> Void {
         self.firstDayOfMonth = date.fisrtDayOfMonth()!
-        let today = NSDate()
         let indexOfFirstDay = self.firstDayOfMonth.weekDay()
         let indexOfLastDay = indexOfFirstDay + self.firstDayOfMonth.daysOfMonth() - 1
         let cellCount = self.calcRows(self.firstDayOfMonth) * 7
@@ -28,7 +27,7 @@ class B3FCalendarVC: UIViewController {
             var dateN: B3FDateType?
             if cellIndex >= indexOfFirstDay && cellIndex <= indexOfLastDay {
                 let date = self.firstDayOfMonth.dateByAddingDays(cellIndex-indexOfFirstDay)!
-                dateN = .Date(date, date.isSameDay(today))
+                dateN = .Date(date)
             }
             else { dateN = .NotDate } // TODO:
             

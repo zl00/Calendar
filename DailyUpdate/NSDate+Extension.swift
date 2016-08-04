@@ -11,8 +11,8 @@ import Foundation
 
 extension NSDate {
     func calendar() -> NSCalendar {
-        let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)
-        calendar?.timeZone = NSTimeZone(forSecondsFromGMT: 0)
+        let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+//        calendar?.timeZone = NSTimeZone(forSecondsFromGMT: 0)
         
         return calendar!
     }

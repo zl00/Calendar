@@ -10,7 +10,7 @@ import UIKit
 
 public enum B3FDateType {
     case NotDate
-    case Date(NSDate, Bool)
+    case Date(NSDate)
 }
 
 class B3FDateCell: UICollectionViewCell {
@@ -36,9 +36,9 @@ class B3FDateCell: UICollectionViewCell {
             updateDate(nil)
             updateIsToday(false)
             break
-        case .Date(let date, let istoday):
+        case .Date(let date):
             updateDate(date)
-            updateIsToday(istoday)
+            updateIsToday(date.isSameDay(NSDate()))
             break
         }
     }
