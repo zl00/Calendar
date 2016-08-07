@@ -16,6 +16,9 @@
 		F14EDAFD1D50B8E4007ED6B1 /* DailyUpdateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14EDAFC1D50B8E4007ED6B1 /* DailyUpdateUITests.swift */; };
 		F14EDB1B1D50B995007ED6B1 /* B3FDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14EDB1A1D50B995007ED6B1 /* B3FDateCell.swift */; };
 		F14EDB1D1D50C264007ED6B1 /* B3FCalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14EDB1C1D50C264007ED6B1 /* B3FCalendarVC.swift */; };
+		F1C08DC41D575B43008FADDD /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C08DC31D575B43008FADDD /* UIColor+Extension.swift */; };
+		F1C08DC61D575BE9008FADDD /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C08DC51D575BE9008FADDD /* UIFont+Extension.swift */; };
+		F1C08DCA1D578F15008FADDD /* B3FCalendarPagingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C08DC91D578F15008FADDD /* B3FCalendarPagingVC.swift */; };
 		F1CB9DAE1D51FA18006B876D /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CB9DAD1D51FA18006B876D /* NSDate+Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +55,9 @@
 		F14EDAFE1D50B8E4007ED6B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F14EDB1A1D50B995007ED6B1 /* B3FDateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = B3FDateCell.swift; sourceTree = "<group>"; };
 		F14EDB1C1D50C264007ED6B1 /* B3FCalendarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = B3FCalendarVC.swift; sourceTree = "<group>"; };
+		F1C08DC31D575B43008FADDD /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		F1C08DC51D575BE9008FADDD /* UIFont+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		F1C08DC91D578F15008FADDD /* B3FCalendarPagingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = B3FCalendarPagingVC.swift; sourceTree = "<group>"; };
 		F1CB9DAD1D51FA18006B876D /* NSDate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,7 +117,10 @@
 				F14EDAE81D50B8E4007ED6B1 /* Info.plist */,
 				F14EDB1A1D50B995007ED6B1 /* B3FDateCell.swift */,
 				F14EDB1C1D50C264007ED6B1 /* B3FCalendarVC.swift */,
+				F1C08DC91D578F15008FADDD /* B3FCalendarPagingVC.swift */,
 				F1CB9DAD1D51FA18006B876D /* NSDate+Extension.swift */,
+				F1C08DC31D575B43008FADDD /* UIColor+Extension.swift */,
+				F1C08DC51D575BE9008FADDD /* UIFont+Extension.swift */,
 			);
 			path = DailyUpdate;
 			sourceTree = "<group>";
@@ -267,9 +276,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1C08DCA1D578F15008FADDD /* B3FCalendarPagingVC.swift in Sources */,
+				F1C08DC61D575BE9008FADDD /* UIFont+Extension.swift in Sources */,
 				F14EDB1D1D50C264007ED6B1 /* B3FCalendarVC.swift in Sources */,
 				F14EDB1B1D50B995007ED6B1 /* B3FDateCell.swift in Sources */,
 				F14EDADF1D50B8E4007ED6B1 /* ViewController.swift in Sources */,
+				F1C08DC41D575B43008FADDD /* UIColor+Extension.swift in Sources */,
 				F14EDADD1D50B8E4007ED6B1 /* AppDelegate.swift in Sources */,
 				F1CB9DAE1D51FA18006B876D /* NSDate+Extension.swift in Sources */,
 			);

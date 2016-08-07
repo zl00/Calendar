@@ -9,17 +9,17 @@
 import UIKit
 
 class B3FCalendarVC: UIViewController {
-    
-    @IBOutlet weak var calendarCV: UICollectionView!
 
-    private var firstDayOfMonth: NSDate = NSDate().fisrtDayOfMonth()!
+    @IBOutlet weak var calendarCV: UICollectionView!
+    private var firstDayOfMonth: NSDate = NSDate().firstDayOfMonth()!
     private var days: Array<B3FDateType> = []
     
-    func prepareData(date: NSDate) -> Void {
-        self.firstDayOfMonth = date.fisrtDayOfMonth()!
+    internal func prepareData(date: NSDate) -> Void {
+        NSLog("set date \(date)")
+        self.firstDayOfMonth = date.firstDayOfMonth()!
         let indexOfFirstDay = self.firstDayOfMonth.weekDay()
         let indexOfLastDay = indexOfFirstDay + self.firstDayOfMonth.daysOfMonth() - 1
-        let cellCount = self.calcRows(self.firstDayOfMonth) * 7
+        let cellCount = self.firstDayOfMonth.aboutWeeksOfMonth() * 7
         var cellIndex = 0
         self.days = []
         
@@ -34,14 +34,15 @@ class B3FCalendarVC: UIViewController {
             self.days.append(dateN!)
             cellIndex += 1
         }
-        
-        self.calendarCV.reloadData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        prepareData(NSDate())
+        setupCalendarUI()
+    }
+    
+    private func setupCalendarUI() -> Void {
         self.calendarCV.delegate = self
         self.calendarCV.dataSource = self
     }
@@ -49,44 +50,42 @@ class B3FCalendarVC: UIViewController {
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator)
     {
         super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
-        self.calendarCV.reloadData()
+        coordinator.animateAlongsideTransition({ (context) -> Void in // ui is a little strange.the perfect solution is to pre-calculate the size of different oritation
+            }, completion: { (context) -> Void in
+            self.calendarCV.reloadData()
+        })
     }
+    
 }
 
 // MARK: - calculates height...
-extension B3FCalendarVC {
-    func calcRows(firstDayOfMonth: NSDate) -> Int {
-        let weekDay = firstDayOfMonth.weekDay()
-        let length = firstDayOfMonth.daysOfMonth()
-        return (weekDay+length-1+6)/7;
-    }
-    
+extension B3FCalendarVC {    
     func calcCellHeight() -> Float {
-        let h = Float(self.calendarCV.frame.size.height - 1.0) / Float(calcRows(firstDayOfMonth))
-        NSLog("height:\(h)")
+        let h = Float(self.calendarCV.frame.size.height - 1.0) / Float(firstDayOfMonth.aboutWeeksOfMonth())
+        
+//        NSLog("height:\(h) \(UIDevice.currentDevice().orientation.isLandscape)")
         return h
     }
     
     func calcCellWidth() -> Float {
         let w = Float(self.calendarCV.frame.size.width - 1.0) / 7.0
-        NSLog("width:\(w)")
+//        NSLog("width:\(w)")
         return w
     }
 }
 
 extension B3FCalendarVC: UICollectionViewDataSource {
     internal func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 7
+        return self.firstDayOfMonth.aboutWeeksOfMonth() * 7
     }
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return calcRows(self.firstDayOfMonth)
+    internal func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
     }
     
     internal func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell: B3FDateCell = self.calendarCV.dequeueReusableCellWithReuseIdentifier("B3FDateCell", forIndexPath: indexPath) as! B3FDateCell
-        cell.updateData(days[indexPath.section*7+indexPath.row])
-        
+        cell.updateData(days[indexPath.row])
         
         return cell
     }

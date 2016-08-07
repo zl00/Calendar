@@ -45,12 +45,12 @@ class B3FDateCell: UICollectionViewCell {
     
     private func setupUI() -> Void {
         self.layer.borderWidth = 1.0
-        self.layer.borderColor = UIColor(red: 158.0/255, green: 158.0/255, blue: 158.0/255, alpha: 0.6).CGColor
+        self.layer.borderColor = UIColor.borderColor().CGColor
     }
     
     private func updateIsToday(isToday: Bool) -> Void {
         self.todayLbl.hidden = !isToday
-        self.dateLbl.font = isToday ? UIFont(name: "Helvetica-Bold", size: 35) : UIFont(name: "Helvetica", size: 35)
+        self.dateLbl.font = isToday ? UIFont.dateFont(true) : UIFont.dateFont(false)
     }
     
     private func updateDate(date: NSDate?) -> Void {

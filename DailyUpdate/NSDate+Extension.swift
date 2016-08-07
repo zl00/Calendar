@@ -12,8 +12,6 @@ import Foundation
 extension NSDate {
     func calendar() -> NSCalendar {
         let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
-//        calendar?.timeZone = NSTimeZone(forSecondsFromGMT: 0)
-        
         return calendar!
     }
     
@@ -39,7 +37,7 @@ extension NSDate {
     
     func weekDay() -> Int {
         let comps  = self.calendar().components(.Weekday, fromDate: self)
-        return comps.weekday
+        return (comps.weekday - 1)
     }
     
     func daysOfMonth() -> Int {
@@ -47,10 +45,9 @@ extension NSDate {
         return range.length
     }
     
-    func fisrtDayOfMonth() -> NSDate? {
-        let calendar = self.calendar()
-        let currentDateComponents = calendar.components([.Year, .Month], fromDate: self)
-        let startOfMonth = calendar.dateFromComponents(currentDateComponents)
+    func firstDayOfMonth() -> NSDate? {
+        let currentDateComponents = self.calendar().components([.Year, .Month], fromDate: self)
+        let startOfMonth = self.calendar().dateFromComponents(currentDateComponents)
         
         return startOfMonth
     }
@@ -66,4 +63,12 @@ extension NSDate {
         
         return nil
     }
+    
+    func aboutWeeksOfMonth() -> Int {
+        let firstDayOfMonth = self.firstDayOfMonth()!
+        let weekDay = firstDayOfMonth.weekDay()
+        let length = firstDayOfMonth.daysOfMonth()
+        return (weekDay+length+6)/7;
+    }
+
 }
