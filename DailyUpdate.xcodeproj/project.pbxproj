@@ -20,6 +20,8 @@
 		F1C08DC61D575BE9008FADDD /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C08DC51D575BE9008FADDD /* UIFont+Extension.swift */; };
 		F1C08DCA1D578F15008FADDD /* B3FCalendarPagingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C08DC91D578F15008FADDD /* B3FCalendarPagingVC.swift */; };
 		F1CB9DAE1D51FA18006B876D /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CB9DAD1D51FA18006B876D /* NSDate+Extension.swift */; };
+		F1D1384C1D5864D000DDE4A3 /* B3FDailyUpdateListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D1384B1D5864D000DDE4A3 /* B3FDailyUpdateListVC.swift */; };
+		F1D1384F1D5868E100DDE4A3 /* Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D1384E1D5868E100DDE4A3 /* Popover.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		F1C08DC51D575BE9008FADDD /* UIFont+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		F1C08DC91D578F15008FADDD /* B3FCalendarPagingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = B3FCalendarPagingVC.swift; sourceTree = "<group>"; };
 		F1CB9DAD1D51FA18006B876D /* NSDate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
+		F1D1384B1D5864D000DDE4A3 /* B3FDailyUpdateListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = B3FDailyUpdateListVC.swift; sourceTree = "<group>"; };
+		F1D1384E1D5868E100DDE4A3 /* Popover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Popover.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 		F14EDADB1D50B8E4007ED6B1 /* DailyUpdate */ = {
 			isa = PBXGroup;
 			children = (
+				F1D138501D586F3100DDE4A3 /* library */,
+				F1D1384D1D58661400DDE4A3 /* extension */,
 				F14EDADC1D50B8E4007ED6B1 /* AppDelegate.swift */,
 				F14EDADE1D50B8E4007ED6B1 /* ViewController.swift */,
 				F14EDAE01D50B8E4007ED6B1 /* Main.storyboard */,
@@ -118,9 +124,7 @@
 				F14EDB1A1D50B995007ED6B1 /* B3FDateCell.swift */,
 				F14EDB1C1D50C264007ED6B1 /* B3FCalendarVC.swift */,
 				F1C08DC91D578F15008FADDD /* B3FCalendarPagingVC.swift */,
-				F1CB9DAD1D51FA18006B876D /* NSDate+Extension.swift */,
-				F1C08DC31D575B43008FADDD /* UIColor+Extension.swift */,
-				F1C08DC51D575BE9008FADDD /* UIFont+Extension.swift */,
+				F1D1384B1D5864D000DDE4A3 /* B3FDailyUpdateListVC.swift */,
 			);
 			path = DailyUpdate;
 			sourceTree = "<group>";
@@ -141,6 +145,24 @@
 				F14EDAFE1D50B8E4007ED6B1 /* Info.plist */,
 			);
 			path = DailyUpdateUITests;
+			sourceTree = "<group>";
+		};
+		F1D1384D1D58661400DDE4A3 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				F1CB9DAD1D51FA18006B876D /* NSDate+Extension.swift */,
+				F1C08DC31D575B43008FADDD /* UIColor+Extension.swift */,
+				F1C08DC51D575BE9008FADDD /* UIFont+Extension.swift */,
+			);
+			name = extension;
+			sourceTree = "<group>";
+		};
+		F1D138501D586F3100DDE4A3 /* library */ = {
+			isa = PBXGroup;
+			children = (
+				F1D1384E1D5868E100DDE4A3 /* Popover.swift */,
+			);
+			name = library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +233,7 @@
 				TargetAttributes = {
 					F14EDAD81D50B8E4007ED6B1 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 59N6ADNETM;
 					};
 					F14EDAEC1D50B8E4007ED6B1 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -280,8 +303,10 @@
 				F1C08DC61D575BE9008FADDD /* UIFont+Extension.swift in Sources */,
 				F14EDB1D1D50C264007ED6B1 /* B3FCalendarVC.swift in Sources */,
 				F14EDB1B1D50B995007ED6B1 /* B3FDateCell.swift in Sources */,
+				F1D1384C1D5864D000DDE4A3 /* B3FDailyUpdateListVC.swift in Sources */,
 				F14EDADF1D50B8E4007ED6B1 /* ViewController.swift in Sources */,
 				F1C08DC41D575B43008FADDD /* UIColor+Extension.swift in Sources */,
+				F1D1384F1D5868E100DDE4A3 /* Popover.swift in Sources */,
 				F14EDADD1D50B8E4007ED6B1 /* AppDelegate.swift in Sources */,
 				F1CB9DAE1D51FA18006B876D /* NSDate+Extension.swift in Sources */,
 			);
@@ -430,7 +455,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = DailyUpdate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = xxxx;
+				PRODUCT_BUNDLE_IDENTIFIER = dailyupdate.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -442,7 +467,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = DailyUpdate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = xxxx;
+				PRODUCT_BUNDLE_IDENTIFIER = dailyupdate.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

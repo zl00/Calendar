@@ -20,4 +20,8 @@ extension UIColor {
     static func blankDailyUpdateColor() -> UIColor {
         return UIColor(red: 232.0/255, green: 232.0/255, blue: 232.0/255, alpha: 1.0)
     }
+    
+    static func overlayColor() -> UIColor {
+        return UIColor(white: 0.0, alpha: 0.2)
+    }
 }

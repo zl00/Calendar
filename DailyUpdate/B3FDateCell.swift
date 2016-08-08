@@ -17,7 +17,7 @@ class B3FDateCell: UICollectionViewCell {
     @IBOutlet weak var todayLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
     
-    private var dateType: B3FDateType?
+    private(set) var dateType: B3FDateType?
     
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -8,15 +8,22 @@
 
 import UIKit
 
+public protocol B3FDateCellDelegate : NSObjectProtocol {
+    func dateCell(date: NSDate, didSelectItemAtView fromView: UIView);
+    func dateCell(date: NSDate, didDeselectItemAtView fromView: UIView);
+}
+
 class B3FCalendarVC: UIViewController {
 
+    internal var dateDelegate: B3FDateCellDelegate?
+    
     @IBOutlet weak var calendarCV: UICollectionView!
     private var firstDayOfMonth: NSDate = NSDate().firstDayOfMonth()!
     private var days: Array<B3FDateType> = []
-    let lineSpacing: Float = 1.0
+    private let lineSpacing: Float = 1.0
     
     internal func prepareData(date: NSDate) -> Void {
-        NSLog("set date \(date)")
+//        NSLog("set date \(date)")
         self.firstDayOfMonth = date.firstDayOfMonth()!
         let indexOfFirstDay = self.firstDayOfMonth.weekDay()
         let indexOfLastDay = indexOfFirstDay + self.firstDayOfMonth.daysOfMonth() - 1
@@ -30,7 +37,7 @@ class B3FCalendarVC: UIViewController {
                 let date = self.firstDayOfMonth.dateByAddingDays(cellIndex-indexOfFirstDay)!
                 dateN = .Date(date)
             }
-            else { dateN = .NotDate } // TODO:
+            else { dateN = .NotDate }
             
             self.days.append(dateN!)
             cellIndex += 1
@@ -75,6 +82,7 @@ extension B3FCalendarVC {
     }
 }
 
+// MARK: - UICollectionViewDataSource
 extension B3FCalendarVC: UICollectionViewDataSource {
     internal func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.firstDayOfMonth.aboutWeeksOfMonth() * 7
@@ -92,10 +100,23 @@ extension B3FCalendarVC: UICollectionViewDataSource {
     }
 }
 
+
+// MARK: - UICollectionViewDelegate
 extension B3FCalendarVC: UICollectionViewDelegate {
-    
+    internal func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! B3FDateCell
+        if let type = cell.dateType {
+            switch type {
+            case .Date(let date):
+                self.dateDelegate?.dateCell(date, didSelectItemAtView: cell)
+            default:
+                break
+            }
+        }
+    }
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
 extension B3FCalendarVC: UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         return CGSizeMake(CGFloat(self.calcCellWidth()), CGFloat(self.calcCellHeight()))

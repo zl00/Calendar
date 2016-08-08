@@ -10,6 +10,7 @@ import UIKit
 
 class B3FCalendarPagingVC: UIPageViewController {
     var calendarVCs: Array<UIViewController> = []
+    var popoverHelper: B3FDailyUpdateListVC!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +18,7 @@ class B3FCalendarPagingVC: UIPageViewController {
         let curr1stDay = NSDate().firstDayOfMonth()!
         for i in -24 ... 24 {
             let calendarVC = (storyboard!.instantiateViewControllerWithIdentifier("B3FCalendarVC")) as! B3FCalendarVC
+            calendarVC.dateDelegate = self
             calendarVC.prepareData(curr1stDay.dateByAddingMonths(i)!)
             calendarVCs.append(calendarVC)
         }
@@ -55,5 +57,17 @@ extension B3FCalendarPagingVC: UIPageViewControllerDataSource {
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
         return 0
+    }
+}
+
+extension B3FCalendarPagingVC: B3FDateCellDelegate {
+    func dateCell(date: NSDate, didSelectItemAtView fromView: UIView) {
+        popoverHelper = storyboard?.instantiateViewControllerWithIdentifier("B3FDailyUpdateListVC") as! B3FDailyUpdateListVC
+        popoverHelper.showFromView(from: fromView)
+//        self.addChildViewController(popoverHelper)
+    }
+    
+    func dateCell(date: NSDate, didDeselectItemAtView fromView: UIView) {
+        
     }
 }
