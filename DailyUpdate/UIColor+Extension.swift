@@ -24,4 +24,8 @@ extension UIColor {
     static func overlayColor() -> UIColor {
         return UIColor(white: 0.0, alpha: 0.2)
     }
+    
+    static func btnColor() -> UIColor {
+        return UIColor(red: 158.0/255, green: 158.0/255, blue: 158.0/255, alpha: 0.6)
+    }
 }

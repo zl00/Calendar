@@ -10,7 +10,7 @@ import UIKit
 
 class B3FCalendarPagingVC: UIPageViewController {
     var calendarVCs: Array<UIViewController> = []
-    var popoverHelper: B3FDailyUpdateListVC!
+    var popoverHelper: B3FDailyUpdateList!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,9 +62,8 @@ extension B3FCalendarPagingVC: UIPageViewControllerDataSource {
 
 extension B3FCalendarPagingVC: B3FDateCellDelegate {
     func dateCell(date: NSDate, didSelectItemAtView fromView: UIView) {
-        popoverHelper = storyboard?.instantiateViewControllerWithIdentifier("B3FDailyUpdateListVC") as! B3FDailyUpdateListVC
-        popoverHelper.showFromView(from: fromView)
-//        self.addChildViewController(popoverHelper)
+        popoverHelper = B3FDailyUpdateList()
+        popoverHelper.showFromView(from: fromView, date: date)
     }
     
     func dateCell(date: NSDate, didDeselectItemAtView fromView: UIView) {

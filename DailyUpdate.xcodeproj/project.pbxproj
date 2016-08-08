@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DF97EEE91D58CDA9001EE721 /* B3FDailyUpdateListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF97EEE81D58CDA9001EE721 /* B3FDailyUpdateListView.xib */; };
 		F14EDADD1D50B8E4007ED6B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14EDADC1D50B8E4007ED6B1 /* AppDelegate.swift */; };
 		F14EDADF1D50B8E4007ED6B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14EDADE1D50B8E4007ED6B1 /* ViewController.swift */; };
 		F14EDAE21D50B8E4007ED6B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F14EDAE01D50B8E4007ED6B1 /* Main.storyboard */; };
@@ -21,7 +20,7 @@
 		F1C08DC61D575BE9008FADDD /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C08DC51D575BE9008FADDD /* UIFont+Extension.swift */; };
 		F1C08DCA1D578F15008FADDD /* B3FCalendarPagingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C08DC91D578F15008FADDD /* B3FCalendarPagingVC.swift */; };
 		F1CB9DAE1D51FA18006B876D /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CB9DAD1D51FA18006B876D /* NSDate+Extension.swift */; };
-		F1D1384C1D5864D000DDE4A3 /* B3FDailyUpdateListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D1384B1D5864D000DDE4A3 /* B3FDailyUpdateListVC.swift */; };
+		F1D1384C1D5864D000DDE4A3 /* B3FDailyUpdateListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D1384B1D5864D000DDE4A3 /* B3FDailyUpdateListView.swift */; };
 		F1D1384F1D5868E100DDE4A3 /* Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D1384E1D5868E100DDE4A3 /* Popover.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +42,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DF97EEE81D58CDA9001EE721 /* B3FDailyUpdateListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = B3FDailyUpdateListView.xib; sourceTree = "<group>"; };
 		F14EDAD91D50B8E4007ED6B1 /* DailyUpdate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyUpdate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F14EDADC1D50B8E4007ED6B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F14EDADE1D50B8E4007ED6B1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,7 +61,7 @@
 		F1C08DC51D575BE9008FADDD /* UIFont+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		F1C08DC91D578F15008FADDD /* B3FCalendarPagingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = B3FCalendarPagingVC.swift; sourceTree = "<group>"; };
 		F1CB9DAD1D51FA18006B876D /* NSDate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
-		F1D1384B1D5864D000DDE4A3 /* B3FDailyUpdateListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = B3FDailyUpdateListVC.swift; sourceTree = "<group>"; };
+		F1D1384B1D5864D000DDE4A3 /* B3FDailyUpdateListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = B3FDailyUpdateListView.swift; sourceTree = "<group>"; };
 		F1D1384E1D5868E100DDE4A3 /* Popover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Popover.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,8 +124,7 @@
 				F14EDB1A1D50B995007ED6B1 /* B3FDateCell.swift */,
 				F14EDB1C1D50C264007ED6B1 /* B3FCalendarVC.swift */,
 				F1C08DC91D578F15008FADDD /* B3FCalendarPagingVC.swift */,
-				F1D1384B1D5864D000DDE4A3 /* B3FDailyUpdateListVC.swift */,
-				DF97EEE81D58CDA9001EE721 /* B3FDailyUpdateListView.xib */,
+				F1D1384B1D5864D000DDE4A3 /* B3FDailyUpdateListView.swift */,
 			);
 			path = DailyUpdate;
 			sourceTree = "<group>";
@@ -278,7 +275,6 @@
 				F14EDAE71D50B8E4007ED6B1 /* LaunchScreen.storyboard in Resources */,
 				F14EDAE41D50B8E4007ED6B1 /* Assets.xcassets in Resources */,
 				F14EDAE21D50B8E4007ED6B1 /* Main.storyboard in Resources */,
-				DF97EEE91D58CDA9001EE721 /* B3FDailyUpdateListView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,7 +303,7 @@
 				F1C08DC61D575BE9008FADDD /* UIFont+Extension.swift in Sources */,
 				F14EDB1D1D50C264007ED6B1 /* B3FCalendarVC.swift in Sources */,
 				F14EDB1B1D50B995007ED6B1 /* B3FDateCell.swift in Sources */,
-				F1D1384C1D5864D000DDE4A3 /* B3FDailyUpdateListVC.swift in Sources */,
+				F1D1384C1D5864D000DDE4A3 /* B3FDailyUpdateListView.swift in Sources */,
 				F14EDADF1D50B8E4007ED6B1 /* ViewController.swift in Sources */,
 				F1C08DC41D575B43008FADDD /* UIColor+Extension.swift in Sources */,
 				F1D1384F1D5868E100DDE4A3 /* Popover.swift in Sources */,
