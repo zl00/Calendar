@@ -13,6 +13,7 @@ class B3FCalendarVC: UIViewController {
     @IBOutlet weak var calendarCV: UICollectionView!
     private var firstDayOfMonth: NSDate = NSDate().firstDayOfMonth()!
     private var days: Array<B3FDateType> = []
+    let lineSpacing: Float = 1.0
     
     internal func prepareData(date: NSDate) -> Void {
         NSLog("set date \(date)")
@@ -38,11 +39,11 @@ class B3FCalendarVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupCalendarUI()
     }
     
     private func setupCalendarUI() -> Void {
+        self.calendarCV.backgroundColor = UIColor.borderColor()
         self.calendarCV.delegate = self
         self.calendarCV.dataSource = self
     }
@@ -61,14 +62,14 @@ class B3FCalendarVC: UIViewController {
 // MARK: - calculates height...
 extension B3FCalendarVC {    
     func calcCellHeight() -> Float {
-        let h = Float(self.calendarCV.frame.size.height - 1.0) / Float(firstDayOfMonth.aboutWeeksOfMonth())
-        
+        let weekCount = Float(firstDayOfMonth.aboutWeeksOfMonth())
+        let h = (Float(self.calendarCV.frame.size.height)-(weekCount-1)*lineSpacing) / weekCount
 //        NSLog("height:\(h) \(UIDevice.currentDevice().orientation.isLandscape)")
         return h
     }
     
     func calcCellWidth() -> Float {
-        let w = Float(self.calendarCV.frame.size.width - 1.0) / 7.0
+        let w = (Float(self.calendarCV.frame.size.width)-6*lineSpacing-10) / 7.0
 //        NSLog("width:\(w)")
         return w
     }
@@ -105,11 +106,11 @@ extension B3FCalendarVC: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
-        return 0
+        return CGFloat(lineSpacing)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
-        return 0
+        return CGFloat(lineSpacing)
     }
 }
 

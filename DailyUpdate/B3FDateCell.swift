@@ -44,8 +44,8 @@ class B3FDateCell: UICollectionViewCell {
     }
     
     private func setupUI() -> Void {
-        self.layer.borderWidth = 1.0
-        self.layer.borderColor = UIColor.borderColor().CGColor
+//        self.layer.borderWidth = 1.0/UIScreen.mainScreen().nativeScale
+//        self.layer.borderColor = UIColor.borderColor().CGColor
     }
     
     private func updateIsToday(isToday: Bool) -> Void {
@@ -59,8 +59,10 @@ class B3FDateCell: UICollectionViewCell {
             dateFormatter.dateFormat = "d"
             self.dateLbl.text = dateFormatter.stringFromDate(d)
             self.dateLbl.hidden = false
+            self.backgroundColor = UIColor.blankDailyUpdateColor()
         } else {
             self.dateLbl.hidden = true
+            self.backgroundColor = UIColor.invalidDailyUpdateColor()
         }
     }
     
