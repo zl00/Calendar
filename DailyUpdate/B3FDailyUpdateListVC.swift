@@ -12,7 +12,7 @@ class B3FDailyUpdateItemCell: UITableViewCell {
     
 }
 
-class B3FDailyUpdateListVC: UIViewController {
+class B3FDailyUpdateList: UIViewController {
     private var popover: Popover!
 //    private var listTV: UITableView! = UITableView(frame: CGRect(x: 0, y: 0, width: 400, height: 300))
     
@@ -30,6 +30,7 @@ class B3FDailyUpdateListVC: UIViewController {
     internal func showFromView(from fromView: UIView) {
         self.popover = Popover(options: [.Type(estimatePopoverType(fromView)),
                                          .BlackOverlayColor(UIColor.overlayColor())], showHandler: nil, dismissHandler: nil)
+        self.view.frame = CGRect(x: 0, y: 0, width: 400, height: 300)
         self.popover.show(self.view, fromView: fromView)
     }
     

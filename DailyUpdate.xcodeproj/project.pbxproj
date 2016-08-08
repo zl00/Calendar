@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF97EEE91D58CDA9001EE721 /* B3FDailyUpdateListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF97EEE81D58CDA9001EE721 /* B3FDailyUpdateListView.xib */; };
 		F14EDADD1D50B8E4007ED6B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14EDADC1D50B8E4007ED6B1 /* AppDelegate.swift */; };
 		F14EDADF1D50B8E4007ED6B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14EDADE1D50B8E4007ED6B1 /* ViewController.swift */; };
 		F14EDAE21D50B8E4007ED6B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F14EDAE01D50B8E4007ED6B1 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF97EEE81D58CDA9001EE721 /* B3FDailyUpdateListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = B3FDailyUpdateListView.xib; sourceTree = "<group>"; };
 		F14EDAD91D50B8E4007ED6B1 /* DailyUpdate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyUpdate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F14EDADC1D50B8E4007ED6B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F14EDADE1D50B8E4007ED6B1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				F14EDB1C1D50C264007ED6B1 /* B3FCalendarVC.swift */,
 				F1C08DC91D578F15008FADDD /* B3FCalendarPagingVC.swift */,
 				F1D1384B1D5864D000DDE4A3 /* B3FDailyUpdateListVC.swift */,
+				DF97EEE81D58CDA9001EE721 /* B3FDailyUpdateListView.xib */,
 			);
 			path = DailyUpdate;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				F14EDAE71D50B8E4007ED6B1 /* LaunchScreen.storyboard in Resources */,
 				F14EDAE41D50B8E4007ED6B1 /* Assets.xcassets in Resources */,
 				F14EDAE21D50B8E4007ED6B1 /* Main.storyboard in Resources */,
+				DF97EEE91D58CDA9001EE721 /* B3FDailyUpdateListView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
