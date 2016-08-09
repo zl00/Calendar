@@ -16,4 +16,12 @@ extension UIFont {
             return UIFont(name: "Helvetica", size: 35)!
         }
     }
+    
+    static func contentTextFont() -> UIFont {
+        return UIFont(name: "Helvetica", size: 17)!
+    }
+    
+    static func titleTextFont() -> UIFont {
+        return UIFont(name: "Helvetica-Bold", size: 17)!
+    }
 }

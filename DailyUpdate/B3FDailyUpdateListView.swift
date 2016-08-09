@@ -9,32 +9,65 @@
 import UIKit
 
 class B3FDailyUpdateItemCell: UITableViewCell {
+    internal override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        textLabel?.font = UIFont.contentTextFont()
+        detailTextLabel?.font = UIFont.contentTextFont()
+        accessoryType = .DisclosureIndicator
+    }
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
 
 class B3FDailyUpdateList: NSObject {
     private var popover: Popover!
-    private var dateLbl: UILabel! = UILabel(frame: CGRect(x: 0, y: 0, width: 400, height: 30))
-    private var listTV: UITableView! = UITableView(frame: CGRect(x: 0, y: 30, width: 400, height: 270))
-    private var btn: UIButton! = UIButton(frame: CGRect(x: 0, y: 300, width: 400, height: 30))
-    private var view: UIView! = UIView(frame: CGRect(x: 0, y: 0, width: 400, height: 330))
+    static let WIDTH:CGFloat = 600.0
+    private var dateLbl: UILabel! = {
+        let l = UILabel(frame: CGRect(x: 0, y: 0, width: WIDTH, height: 30))
+        l.backgroundColor = UIColor.themeColor()
+        l.textColor = UIColor.whiteColor()
+        l.textAlignment = .Center
+        l.font = UIFont.titleTextFont()
+        return l
+    }()
+    private var listTV: UITableView! = {
+        let t = UITableView(frame: CGRect(x: 0, y: 29, width: WIDTH, height: 270))
+        t.separatorStyle = .None
+        t.registerClass(B3FDailyUpdateItemCell.classForCoder(), forCellReuseIdentifier: "B3FDailyUpdateItemCell")
+        return t
+    }()
+    private var seperatorLine: UIView! = {
+        let s = UIView(frame: CGRect(x: 0, y: 299, width: WIDTH, height: 1))
+        s.backgroundColor = UIColor.separatorLineColor()
+        return s
+    }()
+    private var btn: UIButton! = {
+        let b = UIButton(frame: CGRect(x: 0, y: 300, width: WIDTH, height: 30))
+        b.setTitle("Create Daily Update", forState: .Normal)
+        b.setTitleColor(UIColor.textfontColor(), forState: .Normal)
+        b.contentHorizontalAlignment = .Left
+        b.titleLabel?.font = UIFont.contentTextFont()
+        return b
+    }()
+    private var view: UIView! = {
+        let v = UIView(frame: CGRect(x: 0, y: 0, width: WIDTH, height: 330))
+        return v
+    }()
+    
     override init() {
         super.init()
         setup()
     }
     
     private func setup() {
+        listTV.delegate = self
+        listTV.dataSource = self
         self.view.addSubview(dateLbl)
         self.view.addSubview(listTV)
+        self.view.addSubview(seperatorLine)
         self.view.addSubview(btn)
-        self.listTV.delegate = self
-        self.listTV.dataSource = self
-        self.listTV.registerClass(B3FDailyUpdateItemCell.classForCoder(), forCellReuseIdentifier: "B3FDailyUpdateItemCell")
-        dateLbl.backgroundColor = UIColor.btnColor()
-        dateLbl.textColor = UIColor.whiteColor()
-        dateLbl.textAlignment = .Center
-        btn.setTitle("Create Daily Update", forState: .Normal)
-        btn.backgroundColor = UIColor.btnColor()
     }
     
     private func refreshUI(date: NSDate) {
