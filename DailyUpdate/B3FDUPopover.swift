@@ -21,7 +21,7 @@ class B3FDailyUpdateItemCell: UITableViewCell {
     }
 }
 
-class B3FDailyUpdateList: NSObject {
+class B3FDUPopover: NSObject {
     private var popover: Popover!
     
     private var dateLbl: UILabel! = {
@@ -59,7 +59,7 @@ class B3FDailyUpdateList: NSObject {
     override init() {
         super.init()
         setup()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(B3FDailyUpdateList.rotated), name: UIDeviceOrientationDidChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(B3FDUPopover.rotated), name: UIDeviceOrientationDidChangeNotification, object: nil)
     }
     
     deinit {
@@ -94,14 +94,14 @@ class B3FDailyUpdateList: NSObject {
     }
 }
 
-extension B3FDailyUpdateList {
+extension B3FDUPopover {
     private func estimatePopoverType(fromView: UIView) -> PopoverType{
         if (Float(fromView.frame.origin.y) - Float.dailyUpdatePopoverMaxHeight) > 0 { return .Up }
         else { return .Down }
     }
 }
 
-extension B3FDailyUpdateList: UITableViewDataSource {
+extension B3FDUPopover: UITableViewDataSource {
     internal func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
@@ -113,7 +113,7 @@ extension B3FDailyUpdateList: UITableViewDataSource {
     }
 }
 
-extension B3FDailyUpdateList: UITableViewDelegate {
+extension B3FDUPopover: UITableViewDelegate {
     internal func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 50.0
     }

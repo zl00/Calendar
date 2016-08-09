@@ -1,5 +1,5 @@
 //
-//  B3FCalendarVC.swift
+//  B3FCalendarMonthVC.swift
 //  DailyUpdate
 //
 //  Created by Linda Zhong on 8/2/16.
@@ -8,17 +8,17 @@
 
 import UIKit
 
-public protocol B3FDateCellDelegate : NSObjectProtocol {
+public protocol B3FDateCellDelegate: NSObjectProtocol {
     func dateCell(date: NSDate, didSelectItemAtView fromView: UIView);
     func dateCell(date: NSDate, didDeselectItemAtView fromView: UIView);
 }
 
-class B3FCalendarVC: UIViewController {
+class B3FCalendarMonthVC: UIViewController {
 
     internal var dateDelegate: B3FDateCellDelegate?
     
     @IBOutlet weak var calendarCV: UICollectionView!
-    private var firstDayOfMonth: NSDate = NSDate().firstDayOfMonth()!
+    private(set) var firstDayOfMonth: NSDate = NSDate().firstDayOfMonth()!
     private var days: Array<B3FDateType> = []
     private let lineSpacing: Float = 1.0
     
@@ -67,7 +67,7 @@ class B3FCalendarVC: UIViewController {
 }
 
 // MARK: - calculates height...
-extension B3FCalendarVC {    
+extension B3FCalendarMonthVC {
     func calcCellHeight() -> Float {
         let weekCount = Float(firstDayOfMonth.aboutWeeksOfMonth())
         let h = (Float(self.calendarCV.frame.size.height)-(weekCount-1)*lineSpacing) / weekCount
@@ -83,7 +83,7 @@ extension B3FCalendarVC {
 }
 
 // MARK: - UICollectionViewDataSource
-extension B3FCalendarVC: UICollectionViewDataSource {
+extension B3FCalendarMonthVC: UICollectionViewDataSource {
     internal func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.firstDayOfMonth.aboutWeeksOfMonth() * 7
     }
@@ -102,7 +102,7 @@ extension B3FCalendarVC: UICollectionViewDataSource {
 
 
 // MARK: - UICollectionViewDelegate
-extension B3FCalendarVC: UICollectionViewDelegate {
+extension B3FCalendarMonthVC: UICollectionViewDelegate {
     internal func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! B3FDateCell
         if let type = cell.dateType {
@@ -117,7 +117,7 @@ extension B3FCalendarVC: UICollectionViewDelegate {
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
-extension B3FCalendarVC: UICollectionViewDelegateFlowLayout {
+extension B3FCalendarMonthVC: UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         return CGSizeMake(CGFloat(self.calcCellWidth()), CGFloat(self.calcCellHeight()))
     }
