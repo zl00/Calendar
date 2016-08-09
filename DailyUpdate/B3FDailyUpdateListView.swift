@@ -23,9 +23,9 @@ class B3FDailyUpdateItemCell: UITableViewCell {
 
 class B3FDailyUpdateList: NSObject {
     private var popover: Popover!
-    static let WIDTH:CGFloat = 600.0
+    
     private var dateLbl: UILabel! = {
-        let l = UILabel(frame: CGRect(x: 0, y: 0, width: WIDTH, height: 30))
+        let l = UILabel(frame: CGRect(x: 0, y: 0, width: CGFloat(Float.dailyUpdatePopoverMaxWidth), height: 30))
         l.backgroundColor = UIColor.themeColor()
         l.textColor = UIColor.whiteColor()
         l.textAlignment = .Center
@@ -33,18 +33,18 @@ class B3FDailyUpdateList: NSObject {
         return l
     }()
     private var listTV: UITableView! = {
-        let t = UITableView(frame: CGRect(x: 0, y: 29, width: WIDTH, height: 270))
+        let t = UITableView(frame: CGRect(x: 0, y: 29, width: CGFloat(Float.dailyUpdatePopoverMaxWidth), height: 270))
         t.separatorStyle = .None
         t.registerClass(B3FDailyUpdateItemCell.classForCoder(), forCellReuseIdentifier: "B3FDailyUpdateItemCell")
         return t
     }()
     private var seperatorLine: UIView! = {
-        let s = UIView(frame: CGRect(x: 0, y: 299, width: WIDTH, height: 1))
+        let s = UIView(frame: CGRect(x: 0, y: 299, width: CGFloat(Float.dailyUpdatePopoverMaxWidth), height: 1))
         s.backgroundColor = UIColor.separatorLineColor()
         return s
     }()
     private var btn: UIButton! = {
-        let b = UIButton(frame: CGRect(x: 0, y: 300, width: WIDTH, height: 30))
+        let b = UIButton(frame: CGRect(x: 0, y: 300, width: CGFloat(Float.dailyUpdatePopoverMaxWidth), height: 30))
         b.setTitle("Create Daily Update", forState: .Normal)
         b.setTitleColor(UIColor.textfontColor(), forState: .Normal)
         b.contentHorizontalAlignment = .Left
@@ -52,13 +52,18 @@ class B3FDailyUpdateList: NSObject {
         return b
     }()
     private var view: UIView! = {
-        let v = UIView(frame: CGRect(x: 0, y: 0, width: WIDTH, height: 330))
+        let v = UIView(frame: CGRect(x: 0, y: 0, width: CGFloat(Float.dailyUpdatePopoverMaxWidth), height: CGFloat(Float.dailyUpdatePopoverMaxHeight)))
         return v
     }()
     
     override init() {
         super.init()
         setup()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(B3FDailyUpdateList.rotated), name: UIDeviceOrientationDidChangeNotification, object: nil)
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     private func setup() {
@@ -68,12 +73,17 @@ class B3FDailyUpdateList: NSObject {
         self.view.addSubview(listTV)
         self.view.addSubview(seperatorLine)
         self.view.addSubview(btn)
+        
     }
     
     private func refreshUI(date: NSDate) {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd"
         self.dateLbl.text = dateFormatter.stringFromDate(date)
+    }
+    
+    @objc private func rotated() {
+        self.popover.dismiss()
     }
     
     internal func showFromView(from fromView: UIView, date: NSDate) {
@@ -86,7 +96,7 @@ class B3FDailyUpdateList: NSObject {
 
 extension B3FDailyUpdateList {
     private func estimatePopoverType(fromView: UIView) -> PopoverType{
-        if (Float(fromView.frame.origin.y) - 410) > 0 { return .Up }
+        if (Float(fromView.frame.origin.y) - Float.dailyUpdatePopoverMaxHeight) > 0 { return .Up }
         else { return .Down }
     }
 }
