@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NtH-3E-cZh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FZG-LC-604">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -72,8 +72,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="1mO-aZ-tuf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="But-qX-AoU"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1mO-aZ-tuf" secondAttribute="bottom" id="H1a-mq-Xif"/>
+                            <constraint firstItem="1mO-aZ-tuf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="J4F-mP-uks"/>
                             <constraint firstItem="1mO-aZ-tuf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KDq-ow-65W"/>
                             <constraint firstAttribute="trailing" secondItem="1mO-aZ-tuf" secondAttribute="trailing" id="xab-xw-lYf"/>
                         </constraints>
@@ -84,15 +84,49 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="355"/>
+            <point key="canvasLocation" x="291" y="352"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="j3a-nk-rgA">
+            <objects>
+                <navigationController id="FZG-LC-604" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="A9X-lg-NRt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="NtH-3E-cZh" kind="relationship" relationship="rootViewController" id="P1i-y0-tUO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fM5-5j-rov" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-420" y="1028"/>
         </scene>
         <!--Calendar PagingVC-->
         <scene sceneID="i3m-qW-8bO">
             <objects>
-                <pageViewController storyboardIdentifier="B3FCalendarPagingVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="vertical" spineLocation="none" id="NtH-3E-cZh" customClass="B3FCalendarPagingVC" customModule="DailyUpdate" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="B3FCalendarPagingVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="vertical" spineLocation="none" id="NtH-3E-cZh" customClass="B3FCalendarPagingVC" customModule="DailyUpdate" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="ejE-E9-YPK">
+                        <barButtonItem key="leftBarButtonItem" id="tBd-v4-Epg"/>
+                        <barButtonItem key="rightBarButtonItem" image="calendar-icon" style="plain" id="GLI-zF-FRK">
+                            <connections>
+                                <action selector="clickCalendar:" destination="NtH-3E-cZh" id="UCY-Ew-0gb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="calendarItem" destination="GLI-zF-FRK" id="uZL-Wo-d77"/>
+                        <outlet property="titleItem" destination="tBd-v4-Epg" id="PAz-Av-I3R"/>
+                    </connections>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HCK-1B-oS1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="305" y="1028"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="calendar-icon" width="64" height="64"/>
+    </resources>
 </document>

@@ -18,12 +18,13 @@ class B3FCalendarMonthVC: UIViewController {
     internal var dateDelegate: B3FDateCellDelegate?
     
     @IBOutlet weak var calendarCV: UICollectionView!
+    
     private(set) var firstDayOfMonth: NSDate = NSDate().firstDayOfMonth()!
     private var days: Array<B3FDateType> = []
     private let lineSpacing: Float = 1.0
     
     internal func prepareData(date: NSDate) -> Void {
-//        NSLog("set date \(date)")
+        NSLog("set date \(date)")
         self.firstDayOfMonth = date.firstDayOfMonth()!
         let indexOfFirstDay = self.firstDayOfMonth.weekDay()
         let indexOfLastDay = indexOfFirstDay + self.firstDayOfMonth.daysOfMonth() - 1
@@ -47,6 +48,10 @@ class B3FCalendarMonthVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCalendarUI()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     private func setupCalendarUI() -> Void {

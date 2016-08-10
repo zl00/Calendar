@@ -13,49 +13,70 @@ public protocol B3FMonthDelegate: NSObjectProtocol {
 }
 
 class B3FCalendarPagingVC: UIPageViewController {
-    var calendarVCs: Array<UIViewController> = []
+    
+    @IBOutlet weak var titleItem: UIBarButtonItem!
+    @IBOutlet weak var calendarItem: UIBarButtonItem!
+    
+    var currFirstDayOfMonth: NSDate! = NSDate().firstDayOfMonth()!
+    
     var popoverHelper: B3FDUPopover!
     internal var monthDelegate: B3FMonthDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 30)
-        let curr1stDay = NSDate().firstDayOfMonth()!
-        for i in -24 ... 24 {
-            let calendarVC = (storyboard!.instantiateViewControllerWithIdentifier("B3FCalendarMonthVC")) as! B3FCalendarMonthVC
-            calendarVC.dateDelegate = self
-            calendarVC.prepareData(curr1stDay.dateByAddingMonths(i)!)
-            calendarVCs.append(calendarVC)
-        }
+        setup()
         self.dataSource = self
-        self.setViewControllers([calendarVCs[0]], direction: .Reverse, animated: true, completion: nil)
+        self.setViewControllers([generateVC(currFirstDayOfMonth)], direction: .Reverse, animated: true, completion: nil)
         self.doubleSided = false
+        self.titleItem.title = stringTitle(currFirstDayOfMonth)
+    }
+    
+    private func setup() {
+        let image : UIImage? = UIImage(named:"calendar-icon")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        self.calendarItem.image = image
+    }
+    
+    private func generateVC(date: NSDate) -> UIViewController {
+        let calendarVC = (storyboard!.instantiateViewControllerWithIdentifier("B3FCalendarMonthVC")) as! B3FCalendarMonthVC
+        calendarVC.dateDelegate = self
+        calendarVC.prepareData(date)
+        return calendarVC
+    }
+    
+    private func stringTitle(d: NSDate) -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM"
+        return dateFormatter.stringFromDate(d)
+    }
+    
+    @IBAction func clickCalendar(sender: AnyObject) {
+        
     }
 }
 
 extension B3FCalendarPagingVC: UIPageViewControllerDataSource {
     internal func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        if let index = calendarVCs.indexOf(viewController) {
-            if index > 0 {
-                monthDelegate?.month((calendarVCs[index-1] as! B3FCalendarMonthVC).firstDayOfMonth)
-                return calendarVCs[index-1]
-            }
+        if let d = currFirstDayOfMonth.dateByAddingMonths(-1) {
+            currFirstDayOfMonth = d
+            self.titleItem.title = stringTitle(currFirstDayOfMonth)
+            monthDelegate?.month(d)
+            return generateVC(d)
         }
         return nil
     }
     
     internal func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        if let index = calendarVCs.indexOf(viewController) {
-            if (index+1) < calendarVCs.count {
-                monthDelegate?.month((calendarVCs[index+1] as! B3FCalendarMonthVC).firstDayOfMonth)
-                return calendarVCs[index+1]
-            }
+        if let d = currFirstDayOfMonth.dateByAddingMonths(1) {
+            currFirstDayOfMonth = d
+            self.titleItem.title = stringTitle(currFirstDayOfMonth)
+            monthDelegate?.month(d)
+            return generateVC(d)
         }
         return nil
     }
     
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return calendarVCs.count
+        return 1000
     }
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
