@@ -7,8 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< Updated upstream
 		F14EDADD1D50B8E4007ED6B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14EDADC1D50B8E4007ED6B1 /* AppDelegate.swift */; };
 		F14EDADF1D50B8E4007ED6B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14EDADE1D50B8E4007ED6B1 /* ViewController.swift */; };
+=======
+		8FADEF43B917D4F73EF74386 /* Pods_DailyUpdate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E6A011FC1BE62ECF171536 /* Pods_DailyUpdate.framework */; };
+		DFC9951F1D5CD70100C2BC6D /* Keys.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC9951E1D5CD70100C2BC6D /* Keys.framework */; };
+		DFC995261D5CDA1700C2BC6D /* Cached.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DFC995241D5CDA1700C2BC6D /* Cached.xcdatamodeld */; };
+		DFC995291D5CDA3000C2BC6D /* Local.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DFC995271D5CDA3000C2BC6D /* Local.xcdatamodeld */; };
+		DFC9952C1D5CDA4500C2BC6D /* Server.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DFC9952A1D5CDA4500C2BC6D /* Server.xcdatamodeld */; };
+		DFC995331D5CDDCD00C2BC6D /* DailyUpdate+Access.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC9952F1D5CDDCD00C2BC6D /* DailyUpdate+Access.swift */; };
+		DFC995341D5CDDCD00C2BC6D /* DailyUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC995301D5CDDCD00C2BC6D /* DailyUpdate.swift */; };
+		DFC995351D5CDDCD00C2BC6D /* Weather+Access.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC995311D5CDDCD00C2BC6D /* Weather+Access.swift */; };
+		DFC995361D5CDDCD00C2BC6D /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC995321D5CDDCD00C2BC6D /* Weather.swift */; };
+		F14EDADD1D50B8E4007ED6B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14EDADC1D50B8E4007ED6B1 /* AppDelegate.swift */; };
+>>>>>>> Stashed changes
 		F14EDAE21D50B8E4007ED6B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F14EDAE01D50B8E4007ED6B1 /* Main.storyboard */; };
 		F14EDAE41D50B8E4007ED6B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F14EDAE31D50B8E4007ED6B1 /* Assets.xcassets */; };
 		F14EDAE71D50B8E4007ED6B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F14EDAE51D50B8E4007ED6B1 /* LaunchScreen.storyboard */; };
@@ -43,9 +56,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+<<<<<<< Updated upstream
 		F14EDAD91D50B8E4007ED6B1 /* DailyUpdate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyUpdate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F14EDADC1D50B8E4007ED6B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F14EDADE1D50B8E4007ED6B1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+=======
+		09E6A011FC1BE62ECF171536 /* Pods_DailyUpdate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyUpdate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		459DFE017FDE62912B0F96EB /* Pods-DailyUpdate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyUpdate.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyUpdate/Pods-DailyUpdate.release.xcconfig"; sourceTree = "<group>"; };
+		602BE0E7F778755CF1A95351 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		813919D866C1C62108036881 /* Pods-DailyUpdate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyUpdate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyUpdate/Pods-DailyUpdate.debug.xcconfig"; sourceTree = "<group>"; };
+		C8AADB971327434CAB1353C2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		CE5C8B3A3DAA5C583D8DE69F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFC9951E1D5CD70100C2BC6D /* Keys.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Keys.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/DailyUpdate-dcskivywefnecadtslzpncgqhrbg/Build/Products/Debug-iphonesimulator/Keys/Keys.framework"; sourceTree = "<group>"; };
+		DFC995251D5CDA1700C2BC6D /* Cached.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cached.xcdatamodel; sourceTree = "<group>"; };
+		DFC995281D5CDA3000C2BC6D /* Local.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Local.xcdatamodel; sourceTree = "<group>"; };
+		DFC9952B1D5CDA4500C2BC6D /* Server.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Server.xcdatamodel; sourceTree = "<group>"; };
+		DFC9952F1D5CDDCD00C2BC6D /* DailyUpdate+Access.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DailyUpdate+Access.swift"; sourceTree = SOURCE_ROOT; };
+		DFC995301D5CDDCD00C2BC6D /* DailyUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DailyUpdate.swift; path = ../DailyUpdate.swift; sourceTree = "<group>"; };
+		DFC995311D5CDDCD00C2BC6D /* Weather+Access.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Weather+Access.swift"; path = "../Weather+Access.swift"; sourceTree = "<group>"; };
+		DFC995321D5CDDCD00C2BC6D /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Weather.swift; path = ../Weather.swift; sourceTree = "<group>"; };
+		F14EDAD91D50B8E4007ED6B1 /* DailyUpdate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyUpdate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F14EDADC1D50B8E4007ED6B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+>>>>>>> Stashed changes
 		F14EDAE11D50B8E4007ED6B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F14EDAE31D50B8E4007ED6B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F14EDAE61D50B8E4007ED6B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,6 +91,10 @@
 		F14EDB1A1D50B995007ED6B1 /* B3FDateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = B3FDateCell.swift; sourceTree = "<group>"; };
 		F14EDB1C1D50C264007ED6B1 /* B3FCalendarMonthVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = B3FCalendarMonthVC.swift; sourceTree = "<group>"; };
 		F16CB7511D597280003CC6B8 /* Float+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Float+Extension.swift"; sourceTree = "<group>"; };
+<<<<<<< Updated upstream
+=======
+		F1782F551D5C32DE00137090 /* libKeys.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKeys.a; path = "../../../../Library/Developer/Xcode/DerivedData/DailyUpdate-hbxtizvzxtnchaflulyxqucksast/Build/Products/Debug-iphonesimulator/libKeys.a"; sourceTree = "<group>"; };
+>>>>>>> Stashed changes
 		F1C08DC31D575B43008FADDD /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		F1C08DC51D575BE9008FADDD /* UIFont+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		F1C08DC91D578F15008FADDD /* B3FCalendarPagingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = B3FCalendarPagingVC.swift; sourceTree = "<group>"; };
@@ -72,6 +108,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< Updated upstream
+=======
+				DFC9951F1D5CD70100C2BC6D /* Keys.framework in Frameworks */,
+				8FADEF43B917D4F73EF74386 /* Pods_DailyUpdate.framework in Frameworks */,
+>>>>>>> Stashed changes
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +133,110 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+<<<<<<< Updated upstream
+=======
+		87F93587AC8251DC3916E778 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C8AADB971327434CAB1353C2 /* Pods.debug.xcconfig */,
+				602BE0E7F778755CF1A95351 /* Pods.release.xcconfig */,
+				813919D866C1C62108036881 /* Pods-DailyUpdate.debug.xcconfig */,
+				459DFE017FDE62912B0F96EB /* Pods-DailyUpdate.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DFC995201D5CD99000C2BC6D /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				DFC9953A1D5CDF9200C2BC6D /* daily update */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		DFC995211D5CD99900C2BC6D /* view */ = {
+			isa = PBXGroup;
+			children = (
+				DFC9953B1D5CDFA000C2BC6D /* daily update */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		DFC995221D5CD9A400C2BC6D /* model */ = {
+			isa = PBXGroup;
+			children = (
+				DFC9952D1D5CDCF300C2BC6D /* core data */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		DFC995231D5CD9AC00C2BC6D /* DAL */ = {
+			isa = PBXGroup;
+			children = (
+				DFC9952F1D5CDDCD00C2BC6D /* DailyUpdate+Access.swift */,
+				DFC995311D5CDDCD00C2BC6D /* Weather+Access.swift */,
+			);
+			name = DAL;
+			sourceTree = "<group>";
+		};
+		DFC9952D1D5CDCF300C2BC6D /* core data */ = {
+			isa = PBXGroup;
+			children = (
+				DFC995371D5CDE5F00C2BC6D /* schema */,
+				DFC9952E1D5CDD0800C2BC6D /* models */,
+			);
+			name = "core data";
+			sourceTree = "<group>";
+		};
+		DFC9952E1D5CDD0800C2BC6D /* models */ = {
+			isa = PBXGroup;
+			children = (
+				DFC995301D5CDDCD00C2BC6D /* DailyUpdate.swift */,
+				DFC995321D5CDDCD00C2BC6D /* Weather.swift */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		DFC995371D5CDE5F00C2BC6D /* schema */ = {
+			isa = PBXGroup;
+			children = (
+				DFC9952A1D5CDA4500C2BC6D /* Server.xcdatamodeld */,
+				DFC995241D5CDA1700C2BC6D /* Cached.xcdatamodeld */,
+				DFC995271D5CDA3000C2BC6D /* Local.xcdatamodeld */,
+			);
+			name = schema;
+			sourceTree = "<group>";
+		};
+		DFC9953A1D5CDF9200C2BC6D /* daily update */ = {
+			isa = PBXGroup;
+			children = (
+				F14EDB1C1D50C264007ED6B1 /* B3FCalendarMonthVC.swift */,
+				F1C08DC91D578F15008FADDD /* B3FCalendarPagingVC.swift */,
+			);
+			name = "daily update";
+			sourceTree = "<group>";
+		};
+		DFC9953B1D5CDFA000C2BC6D /* daily update */ = {
+			isa = PBXGroup;
+			children = (
+				F14EDB1A1D50B995007ED6B1 /* B3FDateCell.swift */,
+				F1D1384B1D5864D000DDE4A3 /* B3FDUPopover.swift */,
+			);
+			name = "daily update";
+			sourceTree = "<group>";
+		};
+		EE11FAA77783BDC1F429A36B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DFC9951E1D5CD70100C2BC6D /* Keys.framework */,
+				F1782F551D5C32DE00137090 /* libKeys.a */,
+				CE5C8B3A3DAA5C583D8DE69F /* Pods.framework */,
+				09E6A011FC1BE62ECF171536 /* Pods_DailyUpdate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+>>>>>>> Stashed changes
 		F14EDAD01D50B8E4007ED6B1 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +244,11 @@
 				F14EDAF01D50B8E4007ED6B1 /* DailyUpdateTests */,
 				F14EDAFB1D50B8E4007ED6B1 /* DailyUpdateUITests */,
 				F14EDADA1D50B8E4007ED6B1 /* Products */,
+<<<<<<< Updated upstream
+=======
+				87F93587AC8251DC3916E778 /* Pods */,
+				EE11FAA77783BDC1F429A36B /* Frameworks */,
+>>>>>>> Stashed changes
 			);
 			sourceTree = "<group>";
 		};
@@ -115,18 +265,31 @@
 		F14EDADB1D50B8E4007ED6B1 /* DailyUpdate */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< Updated upstream
 				F1D138501D586F3100DDE4A3 /* library */,
 				F1D1384D1D58661400DDE4A3 /* extension */,
 				F14EDADC1D50B8E4007ED6B1 /* AppDelegate.swift */,
 				F14EDADE1D50B8E4007ED6B1 /* ViewController.swift */,
+=======
+				DFC995231D5CD9AC00C2BC6D /* DAL */,
+				DFC995221D5CD9A400C2BC6D /* model */,
+				DFC995211D5CD99900C2BC6D /* view */,
+				DFC995201D5CD99000C2BC6D /* controller */,
+				F1D138501D586F3100DDE4A3 /* library */,
+				F1D1384D1D58661400DDE4A3 /* util */,
+				F14EDADC1D50B8E4007ED6B1 /* AppDelegate.swift */,
+>>>>>>> Stashed changes
 				F14EDAE01D50B8E4007ED6B1 /* Main.storyboard */,
 				F14EDAE31D50B8E4007ED6B1 /* Assets.xcassets */,
 				F14EDAE51D50B8E4007ED6B1 /* LaunchScreen.storyboard */,
 				F14EDAE81D50B8E4007ED6B1 /* Info.plist */,
+<<<<<<< Updated upstream
 				F14EDB1A1D50B995007ED6B1 /* B3FDateCell.swift */,
 				F14EDB1C1D50C264007ED6B1 /* B3FCalendarMonthVC.swift */,
 				F1C08DC91D578F15008FADDD /* B3FCalendarPagingVC.swift */,
 				F1D1384B1D5864D000DDE4A3 /* B3FDUPopover.swift */,
+=======
+>>>>>>> Stashed changes
 			);
 			path = DailyUpdate;
 			sourceTree = "<group>";
@@ -149,7 +312,11 @@
 			path = DailyUpdateUITests;
 			sourceTree = "<group>";
 		};
+<<<<<<< Updated upstream
 		F1D1384D1D58661400DDE4A3 /* extension */ = {
+=======
+		F1D1384D1D58661400DDE4A3 /* util */ = {
+>>>>>>> Stashed changes
 			isa = PBXGroup;
 			children = (
 				F1CB9DAD1D51FA18006B876D /* NSDate+Extension.swift */,
@@ -157,7 +324,11 @@
 				F1C08DC51D575BE9008FADDD /* UIFont+Extension.swift */,
 				F16CB7511D597280003CC6B8 /* Float+Extension.swift */,
 			);
+<<<<<<< Updated upstream
 			name = extension;
+=======
+			name = util;
+>>>>>>> Stashed changes
 			sourceTree = "<group>";
 		};
 		F1D138501D586F3100DDE4A3 /* library */ = {
@@ -175,9 +346,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F14EDB011D50B8E4007ED6B1 /* Build configuration list for PBXNativeTarget "DailyUpdate" */;
 			buildPhases = (
+<<<<<<< Updated upstream
 				F14EDAD51D50B8E4007ED6B1 /* Sources */,
 				F14EDAD61D50B8E4007ED6B1 /* Frameworks */,
 				F14EDAD71D50B8E4007ED6B1 /* Resources */,
+=======
+				0806E6C8FE75A73121BFA6E4 /* 📦 Check Pods Manifest.lock */,
+				F14EDAD51D50B8E4007ED6B1 /* Sources */,
+				F14EDAD61D50B8E4007ED6B1 /* Frameworks */,
+				F14EDAD71D50B8E4007ED6B1 /* Resources */,
+				7E924679D6FAB9D7DF1EA5A2 /* 📦 Embed Pods Frameworks */,
+				3726D1940B0696E98C44FD51 /* 📦 Copy Pods Resources */,
+>>>>>>> Stashed changes
 			);
 			buildRules = (
 			);
@@ -297,6 +477,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+<<<<<<< Updated upstream
+=======
+/* Begin PBXShellScriptBuildPhase section */
+		0806E6C8FE75A73121BFA6E4 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3726D1940B0696E98C44FD51 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DailyUpdate/Pods-DailyUpdate-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E924679D6FAB9D7DF1EA5A2 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DailyUpdate/Pods-DailyUpdate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+>>>>>>> Stashed changes
 /* Begin PBXSourcesBuildPhase section */
 		F14EDAD51D50B8E4007ED6B1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -304,6 +535,7 @@
 			files = (
 				F1C08DCA1D578F15008FADDD /* B3FCalendarPagingVC.swift in Sources */,
 				F1C08DC61D575BE9008FADDD /* UIFont+Extension.swift in Sources */,
+<<<<<<< Updated upstream
 				F14EDB1D1D50C264007ED6B1 /* B3FCalendarMonthVC.swift in Sources */,
 				F14EDB1B1D50B995007ED6B1 /* B3FDateCell.swift in Sources */,
 				F1D1384C1D5864D000DDE4A3 /* B3FDUPopover.swift in Sources */,
@@ -312,6 +544,22 @@
 				F1D1384F1D5868E100DDE4A3 /* Popover.swift in Sources */,
 				F14EDADD1D50B8E4007ED6B1 /* AppDelegate.swift in Sources */,
 				F1CB9DAE1D51FA18006B876D /* NSDate+Extension.swift in Sources */,
+=======
+				DFC995341D5CDDCD00C2BC6D /* DailyUpdate.swift in Sources */,
+				F14EDB1D1D50C264007ED6B1 /* B3FCalendarMonthVC.swift in Sources */,
+				DFC995361D5CDDCD00C2BC6D /* Weather.swift in Sources */,
+				F14EDB1B1D50B995007ED6B1 /* B3FDateCell.swift in Sources */,
+				DFC995331D5CDDCD00C2BC6D /* DailyUpdate+Access.swift in Sources */,
+				F1D1384C1D5864D000DDE4A3 /* B3FDUPopover.swift in Sources */,
+				F1C08DC41D575B43008FADDD /* UIColor+Extension.swift in Sources */,
+				DFC995291D5CDA3000C2BC6D /* Local.xcdatamodeld in Sources */,
+				F1D1384F1D5868E100DDE4A3 /* Popover.swift in Sources */,
+				DFC995261D5CDA1700C2BC6D /* Cached.xcdatamodeld in Sources */,
+				DFC9952C1D5CDA4500C2BC6D /* Server.xcdatamodeld in Sources */,
+				F14EDADD1D50B8E4007ED6B1 /* AppDelegate.swift in Sources */,
+				F1CB9DAE1D51FA18006B876D /* NSDate+Extension.swift in Sources */,
+				DFC995351D5CDDCD00C2BC6D /* Weather+Access.swift in Sources */,
+>>>>>>> Stashed changes
 				F16CB7521D597280003CC6B8 /* Float+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -454,6 +702,10 @@
 		};
 		F14EDB021D50B8E4007ED6B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+<<<<<<< Updated upstream
+=======
+			baseConfigurationReference = 813919D866C1C62108036881 /* Pods-DailyUpdate.debug.xcconfig */;
+>>>>>>> Stashed changes
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -466,6 +718,10 @@
 		};
 		F14EDB031D50B8E4007ED6B1 /* Release */ = {
 			isa = XCBuildConfiguration;
+<<<<<<< Updated upstream
+=======
+			baseConfigurationReference = 459DFE017FDE62912B0F96EB /* Pods-DailyUpdate.release.xcconfig */;
+>>>>>>> Stashed changes
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -562,6 +818,42 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+<<<<<<< Updated upstream
+=======
+
+/* Begin XCVersionGroup section */
+		DFC995241D5CDA1700C2BC6D /* Cached.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DFC995251D5CDA1700C2BC6D /* Cached.xcdatamodel */,
+			);
+			currentVersion = DFC995251D5CDA1700C2BC6D /* Cached.xcdatamodel */;
+			path = Cached.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		DFC995271D5CDA3000C2BC6D /* Local.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DFC995281D5CDA3000C2BC6D /* Local.xcdatamodel */,
+			);
+			currentVersion = DFC995281D5CDA3000C2BC6D /* Local.xcdatamodel */;
+			path = Local.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		DFC9952A1D5CDA4500C2BC6D /* Server.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DFC9952B1D5CDA4500C2BC6D /* Server.xcdatamodel */,
+			);
+			currentVersion = DFC9952B1D5CDA4500C2BC6D /* Server.xcdatamodel */;
+			path = Server.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+>>>>>>> Stashed changes
 	};
 	rootObject = F14EDAD11D50B8E4007ED6B1 /* Project object */;
 }
